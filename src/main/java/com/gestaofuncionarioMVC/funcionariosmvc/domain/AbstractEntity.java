@@ -1,4 +1,4 @@
-package com.gestaofuncionarioMVC.funcionariosmvc;
+package com.gestaofuncionarioMVC.funcionariosmvc.domain;
 
 import java.io.Serializable;
 
