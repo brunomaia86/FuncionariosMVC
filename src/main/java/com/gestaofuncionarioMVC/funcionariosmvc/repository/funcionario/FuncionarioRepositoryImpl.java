@@ -21,11 +21,6 @@ public class FuncionarioRepositoryImpl implements FuncionarioRepositoryQuery {
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
 
-	/*@SuppressWarnings("unchecked")
-	private final Class<Funcionario> entityClass = 
-			(Class<Funcionario>) ( (ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-	*/
-	
 	@Override
 	public List<Funcionario> createQuery(String jpql, Object... params) {
 		TypedQuery<Funcionario> query = entityManager.createQuery(jpql, Funcionario.class);
@@ -44,7 +39,7 @@ public class FuncionarioRepositoryImpl implements FuncionarioRepositoryQuery {
 	@Override
 	@Transactional
 	public void deletar(Serializable id) {
-		funcionarioRepository.delete((Long) id);
+		funcionarioRepository.deleteById((Long) id);
 	}
 
 

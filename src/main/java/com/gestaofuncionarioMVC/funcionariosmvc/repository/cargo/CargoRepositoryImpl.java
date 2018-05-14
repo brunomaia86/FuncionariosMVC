@@ -21,10 +21,6 @@ public class CargoRepositoryImpl implements CargoRepositoryQuery {
 	@Autowired
 	private CargoRepository cargoRepository;
 
-	/*@SuppressWarnings("unchecked")
-	private final Class<Cargo> entityClass = (Class<Cargo>) ((ParameterizedType) getClass().getGenericSuperclass())
-			.getActualTypeArguments()[0];*/
-
 	@Override
 	public List<Cargo> createQuery(String jpql, Object... params) {
 		TypedQuery<Cargo> query = entityManager.createQuery(jpql, Cargo.class);
@@ -37,7 +33,7 @@ public class CargoRepositoryImpl implements CargoRepositoryQuery {
 	@Override
 	@Transactional
 	public void deletar(Serializable id) {
-		cargoRepository.delete((Long) id);
+		cargoRepository.deleteById((Long) id);
 	}
 
 	@Override

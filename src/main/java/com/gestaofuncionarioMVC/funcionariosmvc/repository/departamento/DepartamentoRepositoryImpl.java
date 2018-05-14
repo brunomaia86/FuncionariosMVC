@@ -21,11 +21,6 @@ public class DepartamentoRepositoryImpl implements DepartamentoRepositoryQuery {
 	@Autowired
 	private DepartamentoRepository departamentoRepository;
 
-	/*@SuppressWarnings("unchecked")
-	private final Class<Departamento> entityClass = 
-			(Class<Departamento>) ( (ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-	*/
-	
 	@Override
 	public List<Departamento> createQuery(String jpql, Object... params) {
 		TypedQuery<Departamento> query = entityManager.createQuery(jpql, Departamento.class);
@@ -44,7 +39,7 @@ public class DepartamentoRepositoryImpl implements DepartamentoRepositoryQuery {
 	@Override
 	@Transactional
 	public void deletar(Serializable id) {
-		departamentoRepository.delete((Long) id);
+		departamentoRepository.deleteById((Long) id);
 	}
 
 }
