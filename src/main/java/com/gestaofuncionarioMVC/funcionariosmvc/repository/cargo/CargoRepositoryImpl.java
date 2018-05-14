@@ -22,7 +22,7 @@ public class CargoRepositoryImpl implements CargoRepositoryQuery {
 	@Autowired
 	private CargoRepository cargoRepository;
 
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	private final Class<Cargo> entityClass = (Class<Cargo>) ((ParameterizedType) getClass().getGenericSuperclass())
 			.getActualTypeArguments()[0];
 
@@ -33,7 +33,7 @@ public class CargoRepositoryImpl implements CargoRepositoryQuery {
 			query.setParameter(i + 1, params[i]);
 		}
 		return query.getResultList();
-	}
+	}*/
 
 	@Override
 	@Transactional

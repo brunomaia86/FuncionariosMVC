@@ -22,7 +22,7 @@ public class FuncionarioRepositoryImpl implements FuncionarioRepositoryQuery {
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
 
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	private final Class<Funcionario> entityClass = 
 			(Class<Funcionario>) ( (ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 	
@@ -33,7 +33,7 @@ public class FuncionarioRepositoryImpl implements FuncionarioRepositoryQuery {
 		    query.setParameter(i+1, params[i]);
         }
     	return query.getResultList();
-	}
+	}*/
 
 	@Override
 	@Transactional

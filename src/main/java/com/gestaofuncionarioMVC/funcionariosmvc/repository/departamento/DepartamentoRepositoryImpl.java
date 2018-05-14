@@ -1,12 +1,9 @@
 package com.gestaofuncionarioMVC.funcionariosmvc.repository.departamento;
 
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +19,7 @@ public class DepartamentoRepositoryImpl implements DepartamentoRepositoryQuery {
 	@Autowired
 	private DepartamentoRepository departamentoRepository;
 
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	private final Class<Departamento> entityClass = 
 			(Class<Departamento>) ( (ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 	
@@ -33,7 +30,7 @@ public class DepartamentoRepositoryImpl implements DepartamentoRepositoryQuery {
 		    query.setParameter(i+1, params[i]);
         }
     	return query.getResultList();
-	}
+	}*/
 
 	@Override
 	@Transactional
