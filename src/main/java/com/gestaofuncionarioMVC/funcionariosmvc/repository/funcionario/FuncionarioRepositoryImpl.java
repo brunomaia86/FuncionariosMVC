@@ -1,7 +1,6 @@
 package com.gestaofuncionarioMVC.funcionariosmvc.repository.funcionario;
 
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -25,15 +24,16 @@ public class FuncionarioRepositoryImpl implements FuncionarioRepositoryQuery {
 	/*@SuppressWarnings("unchecked")
 	private final Class<Funcionario> entityClass = 
 			(Class<Funcionario>) ( (ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+	*/
 	
 	@Override
 	public List<Funcionario> createQuery(String jpql, Object... params) {
-		TypedQuery<Funcionario> query = entityManager.createQuery(jpql, entityClass);
+		TypedQuery<Funcionario> query = entityManager.createQuery(jpql, Funcionario.class);
 		for (int i = 0; i < params.length; i++) {
 		    query.setParameter(i+1, params[i]);
         }
     	return query.getResultList();
-	}*/
+	}
 
 	@Override
 	@Transactional

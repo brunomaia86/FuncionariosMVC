@@ -1,7 +1,6 @@
 package com.gestaofuncionarioMVC.funcionariosmvc.repository.cargo;
 
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -24,16 +23,16 @@ public class CargoRepositoryImpl implements CargoRepositoryQuery {
 
 	/*@SuppressWarnings("unchecked")
 	private final Class<Cargo> entityClass = (Class<Cargo>) ((ParameterizedType) getClass().getGenericSuperclass())
-			.getActualTypeArguments()[0];
+			.getActualTypeArguments()[0];*/
 
 	@Override
 	public List<Cargo> createQuery(String jpql, Object... params) {
-		TypedQuery<Cargo> query = entityManager.createQuery(jpql, entityClass);
+		TypedQuery<Cargo> query = entityManager.createQuery(jpql, Cargo.class);
 		for (int i = 0; i < params.length; i++) {
 			query.setParameter(i + 1, params[i]);
 		}
 		return query.getResultList();
-	}*/
+	}
 
 	@Override
 	@Transactional

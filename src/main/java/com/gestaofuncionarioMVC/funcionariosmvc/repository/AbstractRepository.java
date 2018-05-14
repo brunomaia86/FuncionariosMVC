@@ -9,6 +9,6 @@ public interface AbstractRepository<T, PK extends Serializable> {
 	
 	public void deletar(PK id); 
 	
-	//List<T> createQuery(String jpql, Object... params);
+	List<T> createQuery(String jpql, Object... params);
 	
 }
