@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
@@ -19,22 +19,25 @@
 	<link href="/css/style.css" rel="stylesheet" />
 </head>
 <body>
-	<header>
+	<header th:replace="fragments/header :: cabecalho">
 		<div>header</div>
 	</header>
 	
-	<div>
+	<div  class="layout-main">
 		<aside>
-			<nav>
+			<nav th:replace="fragments/sidebar :: nav-sidebar">
 				<span>menu</span>
 			</nav>
 		</aside>
-		<section>
-			<div>conteudo das paginas</div>
+		
+		<section layout:fragment="corpo">
+			<div>conteudo principal das páginas</div>
 		</section>
 	</div>
 	
-	<footer>rodape</footer>
+	<footer th:replace="fragments/footer :: rodape">
+		<div>footer</div>
+	</footer>
 	
 	<!-- Bootstrap core JavaScript
     ================================================== -->
