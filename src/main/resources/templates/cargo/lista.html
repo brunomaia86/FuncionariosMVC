@@ -36,7 +36,7 @@
 	                        <td th:text="${crg.nome}"></td>
 	                        <td th:text="${crg.departamento.nome}"></td>
 	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/cargos/editar/1" role="button">
+	                            <a class="btn btn-info btn-sm" th:href="@{/cargos/editar/{id} (id=${crg.id}) }" role="button">
 	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 	                            </a>
 	                            <button type="button" class="btn btn-danger btn-sm" >
