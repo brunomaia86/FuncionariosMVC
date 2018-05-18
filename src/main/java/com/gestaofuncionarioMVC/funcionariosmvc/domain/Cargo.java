@@ -40,4 +40,12 @@ public class Cargo extends AbstractEntity<Long> {
 		this.departamento = departamento;
 	}
 
+	public List<Funcionario> getFuncionarios() {
+		return funcionarios;
+	}
+
+	public void setFuncionarios(List<Funcionario> funcionarios) {
+		this.funcionarios = funcionarios;
+	}
+
 }
