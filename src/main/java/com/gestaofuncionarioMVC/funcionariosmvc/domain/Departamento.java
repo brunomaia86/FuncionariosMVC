@@ -4,7 +4,10 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
@@ -17,6 +20,10 @@ public class Departamento extends AbstractEntity<Long> {
 
 	@OneToMany(mappedBy = "departamento")
 	private List<Cargo> cargos;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "situacao_juridica_id")
+	private SituacaoJuridica situacaoJuridica;
 
 	public String getNome() {
 		return nome;
@@ -32,6 +39,14 @@ public class Departamento extends AbstractEntity<Long> {
 
 	public void setCargos(List<Cargo> cargos) {
 		this.cargos = cargos;
+	}
+
+	public SituacaoJuridica getSituacaoJuridica() {
+		return situacaoJuridica;
+	}
+
+	public void setSituacaoJuridica(SituacaoJuridica situacaoJuridica) {
+		this.situacaoJuridica = situacaoJuridica;
 	}
 
 }
