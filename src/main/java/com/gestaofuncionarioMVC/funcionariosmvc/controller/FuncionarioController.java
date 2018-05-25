@@ -23,10 +23,11 @@ public class FuncionarioController {
 	@Autowired
 	private FuncionarioService funcionarioService;
 
+	@Autowired
 	private CargoService cargoService;
 	
 	@GetMapping("/cadastrar")
-	public String cadastrar() {
+	public String cadastrar(Funcionario funcionario) {
 		return "/funcionario/cadastro";
 	}
 
